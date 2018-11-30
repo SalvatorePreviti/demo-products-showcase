@@ -1,0 +1,18 @@
+.item {
+  display: inline-block;
+  margin-left: 10px;
+  padding: 5px;
+  text-decoration: none;
+
+  &,
+  &:visited,
+  &:active,
+  &:focus {
+    color: #000;
+  }
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
