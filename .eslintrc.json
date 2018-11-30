@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:node/recommended",
+    "plugin:jest/recommended",
+    "plugin:react-redux/recommended",
+    "prettier"
+  ],
+  "plugins": ["react-redux"],
+  "settings": {
+    "react": { "version": "latest" }
+  },
+  "rules": {
+    "node/no-unpublished-require": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.js", "src/**/*.jsx", "test/**/*.js", "test/**/*.jsx"],
+      "parserOptions": {
+        "ecmaFeatures": { "jsx": true },
+        "sourceType": "module"
+      },
+      "env": {
+        "browser": true
+      },
+      "rules": {
+        "node/no-unsupported-features/es-syntax": "off",
+        "no-console": "warn"
+      }
+    },
+    {
+      "files": ["src/**/*.js", "src/**/*.jsx"],
+      "rules": {
+        "node/no-unpublished-require": "error"
+      }
+    },
+    {
+      "files": ["test/**/*.js", "test/**/*.jsx"],
+      "env": {
+        "node": true,
+        "jest": true
+      }
+    }
+  ]
+}
