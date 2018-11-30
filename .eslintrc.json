@@ -16,7 +16,7 @@
   },
   "overrides": [
     {
-      "files": ["src/**/*.js", "src/**/*.jsx", "test/**/*.js", "test/**/*.jsx"],
+      "files": ["src/**/*.js", "src/**/*.jsx"],
       "parserOptions": {
         "ecmaFeatures": { "jsx": true },
         "sourceType": "module"
@@ -30,13 +30,10 @@
       }
     },
     {
-      "files": ["src/**/*.js", "src/**/*.jsx"],
+      "files": ["src/**/*.test.js", "src/**/*.test.jsx"],
       "rules": {
         "node/no-unpublished-require": "error"
-      }
-    },
-    {
-      "files": ["test/**/*.js", "test/**/*.jsx"],
+      },
       "env": {
         "node": true,
         "jest": true
