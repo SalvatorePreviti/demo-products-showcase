@@ -1,6 +1,6 @@
 import actionSelectCategory from '../actions/actionSelectCategory'
 import getDefaultState from '../getDefaultState'
-import reducers from './'
+import reducers from '.'
 
 describe('reducerSelectCategory', () => {
   it('set the active category and apply the product filter', () => {

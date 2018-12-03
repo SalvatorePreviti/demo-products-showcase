@@ -3,7 +3,7 @@ import getDefaultState from '../getDefaultState'
 import reducers from './'
 
 describe('reducerSetProductFilter', () => {
-  it('set the active category and apply the product filter', () => {
+  it('sets the product filter and apply the product filter', () => {
     const category = {
       id: '123',
       products: [{ id: 'p1', title: 'p1' }, { id: 'p2', title: 'p2' }]
