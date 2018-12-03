@@ -12,16 +12,17 @@ describe('ProductList', () => {
       { id: '4', title: 'title 4', description: 'desc 4' }
     ]
 
-    function getComponent() {
-      return <ProductList items={items} activeProductsById={{}} />
-    }
+    let root
+
+    beforeAll(() => {
+      root = shallow(<ProductList items={items} activeProductsById={{}} />)
+    })
 
     it('snapshots', () => {
-      expect(shallow(getComponent())).toMatchSnapshot()
+      expect(root).toMatchSnapshot()
     })
 
     it('renders all elements', () => {
-      const root = shallow(getComponent())
       const found = root.find('ProductItem')
       expect(found.map(x => x.props())).toMatchObject([
         { active: false, description: 'desc 1', title: 'title 1' },
@@ -45,16 +46,17 @@ describe('ProductList', () => {
       '4': true
     }
 
-    function getComponent() {
-      return <ProductList items={items} activeProductsById={activeProductsById} />
-    }
+    let root
+
+    beforeAll(() => {
+      root = shallow(<ProductList items={items} activeProductsById={activeProductsById} />)
+    })
 
     it('snapshots', () => {
-      expect(shallow(getComponent())).toMatchSnapshot()
+      expect(root).toMatchSnapshot()
     })
 
     it('renders all elements', () => {
-      const root = shallow(getComponent())
       const found = root.find('ProductItem')
       expect(found.map(x => x.props())).toMatchObject([
         { active: false, description: 'desc 1', title: 'title 1' },
@@ -62,6 +64,22 @@ describe('ProductList', () => {
         { active: false, description: 'desc 3', title: 'title 3' },
         { active: true, description: 'desc 4', title: 'title 4' }
       ])
+    })
+  })
+
+  describe('with an empty list of items', () => {
+    let root
+
+    beforeAll(() => {
+      root = shallow(<ProductList items={[]} activeProductsById={{}} />)
+    })
+
+    it('snapshots', () => {
+      expect(root).toMatchSnapshot()
+    })
+
+    it('renders empty message div', () => {
+      expect(root.find('div.empty')).toHaveLength(1)
     })
   })
 

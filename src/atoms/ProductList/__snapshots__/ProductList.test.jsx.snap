@@ -73,3 +73,13 @@ exports[`ProductList with a list of items, without selection snapshots 1`] = `
   />
 </div>
 `;
+
+exports[`ProductList with an empty list of items snapshots 1`] = `
+<div>
+  <div
+    className="empty"
+  >
+    No products found
+  </div>
+</div>
+`;

@@ -4,12 +4,17 @@ import { shallow } from 'enzyme'
 import ProductFilter from './ProductFilter'
 
 describe('ProductItem', () => {
+  let root
+
+  beforeAll(() => {
+    root = shallow(<ProductFilter value="custom filter" />)
+  })
+
   it('snapshots', () => {
-    expect(shallow(<ProductFilter value="custom filter" />)).toMatchSnapshot()
+    expect(root).toMatchSnapshot()
   })
 
   it('renders the input box correctly', () => {
-    const root = shallow(<ProductFilter value="custom filter" />)
     expect(root.find('input').props()).toMatchObject({})
   })
 })

@@ -12,16 +12,17 @@ describe('ProductCategories', () => {
   ]
 
   describe('with a list of categories, without selection', () => {
-    function getComponent() {
-      return <ProductCategories categories={categories} />
-    }
+    let root
+
+    beforeAll(() => {
+      root = shallow(<ProductCategories categories={categories} />)
+    })
 
     it('snapshots', () => {
-      expect(shallow(getComponent())).toMatchSnapshot()
+      expect(root).toMatchSnapshot()
     })
 
     it('renders all elements', () => {
-      const root = shallow(getComponent())
       const found = root.find('a')
       expect(found.map(item => item.props())).toMatchObject([
         { href: '#', className: 'item', children: 'title 1' },
@@ -33,16 +34,17 @@ describe('ProductCategories', () => {
   })
 
   describe('with a list of categories, with a selection', () => {
-    function getComponent() {
-      return <ProductCategories categories={categories} activeCategory={categories[1]} />
-    }
+    let root
+
+    beforeAll(() => {
+      root = shallow(<ProductCategories categories={categories} activeCategory={categories[1]} />)
+    })
 
     it('snapshots', () => {
-      expect(shallow(getComponent())).toMatchSnapshot()
+      expect(root).toMatchSnapshot()
     })
 
     it('renders all elements, marking as active the active element', () => {
-      const root = shallow(getComponent())
       const found = root.find('a')
       expect(found.map(item => item.props())).toMatchObject([
         { href: '#', className: 'item', children: 'title 1' },
