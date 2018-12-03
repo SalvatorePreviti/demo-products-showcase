@@ -1,7 +1,8 @@
-export default function buildProductList(categories, products) {
+export default function buildProductsShowcase(categories, products) {
   const visibleCategories = categories.filter(category => !category.hidden)
 
   const productsByCategory = Object.create(null)
+
   visibleCategories.forEach(category => {
     productsByCategory[category.id] = []
   })

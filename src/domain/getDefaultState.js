@@ -3,7 +3,9 @@ function getDefaultState() {
     categories: [],
     activeCategory: null,
     productFilter: '',
-    filteredProducts: []
+    filteredProducts: [],
+    loading: false,
+    loadFailed: false
   }
 }
 

@@ -9,7 +9,6 @@ import BoundCategoryProductList from '../BoundCategoryProductList/BoundCategoryP
 
 function AppBody(props) {
   const { loading, loadFailed } = props
-
   if (loadFailed) {
     return <LoadError />
   }

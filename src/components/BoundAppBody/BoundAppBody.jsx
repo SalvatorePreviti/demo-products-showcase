@@ -1,27 +1,12 @@
-import React from 'react'
-import getDefaultState from '../../domain/getDefaultState'
-import mockStore from 'redux-mock-store'
-import { shallow } from 'enzyme'
-import BoundAppBody from './BoundAppBody'
+import { connect } from 'react-redux'
+import AppBody from './AppBody'
 
-describe('BoundCategoryProductList', () => {
-  let root
-  let store
+function mapStateToProps(state) {
+  const { loading, loadFailed } = state
+  return {
+    loading: loading,
+    loadFailed: loadFailed
+  }
+}
 
-  beforeAll(() => {
-    store = mockStore()({
-      ...getDefaultState(),
-      loading: false,
-      loadFailed: false
-    })
-    root = shallow(<BoundAppBody store={store} />)
-  })
-
-  it('snapshots', () => {
-    expect(root).toMatchSnapshot()
-  })
-
-  it('passes props', () => {
-    expect(root.props()).toMatchObject({ loading: false, loadFailed: false })
-  })
-})
+export default connect(mapStateToProps)(AppBody)

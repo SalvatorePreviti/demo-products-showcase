@@ -1,3 +1,6 @@
 export const SELECT_CATEGORY = 'SELECT_CATEGORY'
 export const SELECT_PRODUCT = 'SELECT_PRODUCT'
 export const SET_PRODUCT_FILTER = 'SET_PRODUCT_FILTER'
+export const LOAD_STARTED = 'LOAD_STARTED'
+export const LOAD_OK = 'LOAD_OK'
+export const LOAD_FAIL = 'LOAD_FAIL'

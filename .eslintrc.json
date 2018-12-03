@@ -20,7 +20,8 @@
   },
   "rules": {
     "react-redux/mapDispatchToProps-returns-object": "off",
-    "node/no-unpublished-require": "off"
+    "node/no-unpublished-require": "off",
+    "prefer-template": "warn"
   },
   "overrides": [
     {

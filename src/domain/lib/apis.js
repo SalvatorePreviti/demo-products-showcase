@@ -12,21 +12,21 @@ function getData(body) {
   return data
 }
 
-async function getResponseData(response) {
+function getResponseData(response) {
   if (response.status < 200 || response.status >= 300) {
     throw new Error(`Http error ${response.status} ${response.statusText}`)
   }
-  return getData(await response.json())
+  return response.json().then(getData)
 }
 
-export async function fetchCategories() {
-  return await getResponseData(await fetch('https://api.gousto.co.uk/products/v2.0/categories'))
+export function fetchCategories() {
+  return fetch(`${process.env.PRODUCTS_API_URL}/products/v2.0/categories`).then(getResponseData)
 }
 
-export async function fetchProducts() {
-  return await getResponseData(
-    await fetch(
-      'https://api.gousto.co.uk/products/v2.0/products?includes[]=categories&includes[]=attributes&sort=position&image_sizes[]=365&image_sizes[]=400&period_id=120'
-    )
-  )
+export function fetchProducts() {
+  return fetch(
+    `${
+      process.env.PRODUCTS_API_URL
+    }/products/v2.0/products?includes[]=categories&includes[]=attributes&sort=position&image_sizes[]=365&image_sizes[]=400&period_id=120`
+  ).then(getResponseData)
 }

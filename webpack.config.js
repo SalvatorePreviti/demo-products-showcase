@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const DynamicCdnWebpackPlugin = require('dynamic-cdn-webpack-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
@@ -5,6 +6,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 function getConfig(env, config) {
   const isProduction = config && config.mode === 'production'
+  const isDevServer = config && config.inline
 
   const cssModuleLoader = {
     loader: 'css-loader',
@@ -22,6 +24,8 @@ function getConfig(env, config) {
       plugins: () => [postcssPresetEnv()]
     }
   }
+
+  const devServerPort = 8080
 
   return {
     entry: './src/index.jsx',
@@ -46,7 +50,16 @@ function getConfig(env, config) {
       extensions: ['*', '.js', '.jsx']
     },
     devServer: {
-      contentBase: './dist'
+      contentBase: './dist',
+      port: devServerPort,
+      proxy: {
+        '/products': {
+          logLevel: 'debug',
+          changeOrigin: true,
+          target: 'https://api.gousto.co.uk',
+          secure: false
+        }
+      }
     },
     plugins: [
       new HtmlWebPackPlugin({
@@ -59,9 +72,15 @@ function getConfig(env, config) {
         // both options are optional
         filename: '[name].css',
         chunkFilename: '[id].css'
+      }),
+      new webpack.DefinePlugin({
+        'process.env': {
+          PRODUCTS_API_URL: JSON.stringify(
+            process.env.PRODUCTS_API_URL || (isDevServer ? `http://localhost:${devServerPort}` : 'https://api.gousto.co.uk')
+          )
+        }
       })
     ]
   }
 }
-
 module.exports = getConfig

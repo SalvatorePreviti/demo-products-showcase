@@ -1,6 +1,6 @@
-import buildProductList from './buildProductList'
+import buildProductsShowcase from './buildProductsShowcase'
 
-describe('buildCategoriesAndProducts', () => {
+describe('buildProductsShowcase', () => {
   const categories = [
     { id: 'C0', title: 'c0 title' },
     { id: 'C1', title: 'c1 title' },
@@ -39,7 +39,7 @@ describe('buildCategoriesAndProducts', () => {
   let combined
 
   beforeAll(() => {
-    combined = buildProductList(categories, products)
+    combined = buildProductsShowcase(categories, products)
   })
 
   it('generates the correct combined values', () => {

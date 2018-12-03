@@ -2,9 +2,13 @@ import nock from 'nock'
 import { fetchCategories, fetchProducts } from './apis'
 
 describe('apis', () => {
+  beforeAll(() => {
+    process.env.PRODUCTS_API_URL = 'http://localhost:9999'
+  })
+
   describe('fetchCategories', () => {
     function nockRequest() {
-      return nock('https://api.gousto.co.uk').get('/products/v2.0/categories')
+      return nock('http://localhost:9999').get('/products/v2.0/categories')
     }
 
     it('fetches', async () => {
@@ -41,7 +45,7 @@ describe('apis', () => {
 
   describe('fetchProducts', () => {
     function nockRequest() {
-      return nock('https://api.gousto.co.uk').get(
+      return nock('http://localhost:9999').get(
         '/products/v2.0/products?includes[]=categories&includes[]=attributes&sort=position&image_sizes[]=365&image_sizes[]=400&period_id=120'
       )
     }
