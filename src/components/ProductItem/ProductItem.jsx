@@ -7,7 +7,7 @@ const headerActiveStyle = styles.header + ' ' + styles.active
 const contentStyle = styles.content
 
 function ProductItem(props) {
-  const { itemId, title, active, content } = props
+  const { itemId, title, active, description } = props
   return (
     <div>
       <a
@@ -18,7 +18,7 @@ function ProductItem(props) {
         }}>
         {title}
       </a>
-      {active ? <div className={contentStyle}>{content}</div> : null}
+      {active ? <div className={contentStyle}>{description}</div> : null}
     </div>
   )
 }
@@ -27,7 +27,7 @@ ProductItem.propTypes = {
   itemId: PropTypes.string,
   title: PropTypes.string.isRequired,
   active: PropTypes.bool,
-  content: PropTypes.string,
+  description: PropTypes.string,
   onSelect: PropTypes.func
 }
 

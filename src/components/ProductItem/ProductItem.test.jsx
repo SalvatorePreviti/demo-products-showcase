@@ -26,16 +26,16 @@ describe('ProductItem', () => {
       })
     })
 
-    it('does not have content visible', () => {
+    it('does not have description visible', () => {
       const root = Renderer.create(getComponent()).root
-      const content = root.findAll(item => item.type === 'div' && item.props.className === 'content', { deep: true })[0]
-      expect(content).toBeUndefined()
+      const description = root.findAll(item => item.type === 'div' && item.props.className === 'description', { deep: true })[0]
+      expect(description).toBeUndefined()
     })
   })
 
   describe('active', () => {
     function getComponent() {
-      return <ProductItem title="Active item title" content="Item content" active={true} />
+      return <ProductItem title="Active item title" description="Item description" active={true} />
     }
 
     it('snapshots', () => {
@@ -54,12 +54,12 @@ describe('ProductItem', () => {
       })
     })
 
-    it('renders content', () => {
+    it('renders description', () => {
       const root = Renderer.create(getComponent()).root
-      const content = root.find(item => item.type === 'div' && item.props.className === 'content', { deep: true })
-      expect(content.props).toMatchObject({
-        className: 'content',
-        children: 'Item content'
+      const description = root.find(item => item.type === 'div' && item.props.className === 'description', { deep: true })
+      expect(description.props).toMatchObject({
+        className: 'description',
+        children: 'Item description'
       })
     })
   })
