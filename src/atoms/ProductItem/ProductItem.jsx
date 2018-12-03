@@ -16,7 +16,9 @@ function ProductItem(props) {
           if (props.onSelect) {
             props.onSelect()
           }
-          event.preventDefault()
+          if (event) {
+            event.preventDefault()
+          }
         }}>
         {title}
       </a>

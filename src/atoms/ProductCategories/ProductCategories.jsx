@@ -20,7 +20,9 @@ function ProductCategories(props) {
               if (onSelectCategory) {
                 onSelectCategory(category)
               }
-              event.preventDefault()
+              if (event) {
+                event.preventDefault()
+              }
             }}>
             {category.title}
           </a>

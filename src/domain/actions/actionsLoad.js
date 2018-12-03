@@ -12,8 +12,10 @@ export function actionLoad() {
       })
       .catch(error => {
         // this should go to a common logging and error handling library that is outside the scope of this project.
-        // eslint-disable-next-line no-console
-        console.error('Failed to load categories and products', error)
+        if (typeof jest === undefined) {
+          // eslint-disable-next-line no-console
+          console.error('Failed to load categories and products', error)
+        }
         dispatch(actionLoadFail())
       })
   }
