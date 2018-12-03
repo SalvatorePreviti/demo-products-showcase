@@ -6,24 +6,28 @@ exports[`ProductCategories with a list of categories, with a selection snapshots
   <a
     className="item"
     href="#"
+    onClick={[Function]}
   >
     title 1
   </a>
   <a
     className="item active"
     href="#"
+    onClick={[Function]}
   >
     title 2
   </a>
   <a
     className="item"
     href="#"
+    onClick={[Function]}
   >
     title 3
   </a>
   <a
     className="item"
     href="#"
+    onClick={[Function]}
   >
     title 4
   </a>
@@ -36,24 +40,28 @@ exports[`ProductCategories with a list of categories, without selection snapshot
   <a
     className="item"
     href="#"
+    onClick={[Function]}
   >
     title 1
   </a>
   <a
     className="item"
     href="#"
+    onClick={[Function]}
   >
     title 2
   </a>
   <a
     className="item"
     href="#"
+    onClick={[Function]}
   >
     title 3
   </a>
   <a
     className="item"
     href="#"
+    onClick={[Function]}
   >
     title 4
   </a>

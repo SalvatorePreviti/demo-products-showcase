@@ -10,11 +10,18 @@ function ProductCategories(props) {
   return (
     <header>
       Store Cupboard
-      {categories.map(category => (
-        <a key={category.id} href="#" className={category.id === activeCategoryId ? itemActiveStyle : itemStyle}>
-          {category.title}
-        </a>
-      ))}
+      {categories.map(category => {
+        const categoryId = category.id
+        return (
+          <a
+            key={categoryId}
+            href="#"
+            className={categoryId === activeCategoryId ? itemActiveStyle : itemStyle}
+            onClick={() => props.onSelectCategory(categoryId)}>
+            {category.title}
+          </a>
+        )
+      })}
     </header>
   )
 }
@@ -26,7 +33,8 @@ ProductCategories.propTypes = {
       title: PropTypes.string.isRequired
     })
   ).isRequired,
-  activeCategoryId: PropTypes.string
+  activeCategoryId: PropTypes.string,
+  onSelectCategory: PropTypes.func.isRequired
 }
 
 ProductCategories.prop
