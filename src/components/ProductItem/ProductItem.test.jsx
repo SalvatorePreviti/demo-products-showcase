@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import ShallowRenderer from 'react-test-renderer/shallow'
 
 import ProductItem from './ProductItem'
 
@@ -11,9 +10,7 @@ describe('ProductItem', () => {
     }
 
     it('snapshots', () => {
-      const shallowRenderer = new ShallowRenderer()
-      shallowRenderer.render(getComponent())
-      expect(shallowRenderer.getRenderOutput()).toMatchSnapshot()
+      expect(shallow(getComponent())).toMatchSnapshot()
     })
 
     it('renders header', () => {
@@ -38,9 +35,7 @@ describe('ProductItem', () => {
     }
 
     it('snapshots', () => {
-      const shallowRenderer = new ShallowRenderer()
-      shallowRenderer.render(getComponent())
-      expect(shallowRenderer.getRenderOutput()).toMatchSnapshot()
+      expect(shallow(getComponent())).toMatchSnapshot()
     })
 
     it('renders header with active style', () => {
