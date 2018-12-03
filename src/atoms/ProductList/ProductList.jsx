@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import ProductItem from '../ProductItem/ProductItem'
 
 function ProductList(props) {
-  const { items, onSelect } = props
+  const { items, activeProductsById, onSelect } = props
   return (
     <div>
       {items.map(item => {
@@ -13,7 +13,7 @@ function ProductList(props) {
             key={itemId}
             itemId={itemId}
             title={item.title}
-            active={item.active}
+            active={activeProductsById[itemId] === true}
             description={item.description}
             onSelect={() => onSelect && onSelect(item)}
           />
@@ -31,6 +31,7 @@ ProductList.propTypes = {
       description: PropTypes.string
     })
   ).isRequired,
+  activeProductsById: PropTypes.object.isRequired,
   onSelect: PropTypes.func
 }
 

@@ -4,6 +4,7 @@ function getDefaultState() {
     activeCategory: null,
     productFilter: '',
     filteredProducts: [],
+    activeProductsById: {},
     loading: false,
     loadFailed: false
   }

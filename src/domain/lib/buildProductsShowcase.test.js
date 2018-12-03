@@ -48,13 +48,13 @@ describe('buildProductsShowcase', () => {
         id: 'C0',
         title: 'c0 title',
         products: [
-          { id: 'P0', title: 'Joseph Joseph - Citrus Catcher', description: 'Citrous Description Text', active: false },
-          { id: 'P1', title: 'title 1', description: 'P1 Description', active: false }
+          { id: 'P0', title: 'Joseph Joseph - Citrus Catcher', description: 'Citrous Description Text' },
+          { id: 'P1', title: 'title 1', description: 'P1 Description' }
         ]
       },
-      { id: 'C1', title: 'c1 title', products: [{ id: 'P1', title: 'title 1', description: 'P1 Description', active: false }] },
-      { id: 'C2', title: 'c2 title', products: [{ id: 'P2', title: 'title 2', description: 'P2 Description', active: false }] },
-      { id: 'C3', title: 'c3 title', products: [{ id: 'P3', title: 'title 3', description: 'P3 Description', active: false }] }
+      { id: 'C1', title: 'c1 title', products: [{ id: 'P1', title: 'title 1', description: 'P1 Description' }] },
+      { id: 'C2', title: 'c2 title', products: [{ id: 'P2', title: 'title 2', description: 'P2 Description' }] },
+      { id: 'C3', title: 'c3 title', products: [{ id: 'P3', title: 'title 3', description: 'P3 Description' }] }
     ])
   })
 })

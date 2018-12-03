@@ -1,16 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BoundCategoryProductList snapshots 1`] = `
+exports[`BoundProductList snapshots 1`] = `
 <ProductList
+  activeProductsById={Object {}}
   items={
     Array [
       Object {
-        "active": false,
         "id": "1",
         "title": "title1",
       },
       Object {
-        "active": false,
         "id": "2",
         "title": "title2",
       },

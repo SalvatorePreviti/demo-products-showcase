@@ -6,7 +6,7 @@ import LoadError from '../../atoms/LoadError/LoadError'
 import Loading from '../../atoms/Loading/Loading'
 import BoundProductCategories from '../BoundProductCategories/BoundProductCategories'
 import BoundProductFilter from '../BoundProductFilter/BoundProductFilter'
-import BoundCategoryProductList from '../BoundCategoryProductList/BoundCategoryProductList'
+import BoundProductList from '../BoundProductList/BoundProductList'
 
 describe('AppBody', () => {
   describe('with load error', () => {
@@ -68,8 +68,8 @@ describe('AppBody', () => {
       expect(root.find(BoundProductFilter)).toHaveLength(1)
     })
 
-    it('Renders BoundCategoryProductList', () => {
-      expect(root.find(BoundCategoryProductList)).toHaveLength(1)
+    it('Renders BoundProductList', () => {
+      expect(root.find(BoundProductList)).toHaveLength(1)
     })
   })
 })

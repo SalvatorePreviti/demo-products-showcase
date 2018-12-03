@@ -14,8 +14,7 @@ export default function buildProductsShowcase(categories, products) {
         list.push({
           id: product.id,
           title: product.title,
-          description: product.description,
-          active: false
+          description: product.description
         })
       }
     })

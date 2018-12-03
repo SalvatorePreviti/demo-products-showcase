@@ -6,14 +6,14 @@ import ProductList from './ProductList'
 describe('ProductList', () => {
   describe('with a list of items, without selection', () => {
     const items = [
-      { id: '1', title: 'title 1', description: 'desc 1', active: false },
-      { id: '2', title: 'title 2', description: 'desc 2', active: false },
-      { id: '3', title: 'title 3', description: 'desc 3', active: false },
-      { id: '4', title: 'title 4', description: 'desc 4', active: false }
+      { id: '1', title: 'title 1', description: 'desc 1' },
+      { id: '2', title: 'title 2', description: 'desc 2' },
+      { id: '3', title: 'title 3', description: 'desc 3' },
+      { id: '4', title: 'title 4', description: 'desc 4' }
     ]
 
     function getComponent() {
-      return <ProductList items={items} />
+      return <ProductList items={items} activeProductsById={{}} />
     }
 
     it('snapshots', () => {
@@ -34,14 +34,19 @@ describe('ProductList', () => {
 
   describe('with a list of items, with some selections', () => {
     const items = [
-      { id: '1', title: 'title 1', description: 'desc 1', active: false },
-      { id: '2', title: 'title 2', description: 'desc 2', active: true },
-      { id: '3', title: 'title 3', description: 'desc 3', active: false },
-      { id: '4', title: 'title 4', description: 'desc 4', active: true }
+      { id: '1', title: 'title 1', description: 'desc 1' },
+      { id: '2', title: 'title 2', description: 'desc 2' },
+      { id: '3', title: 'title 3', description: 'desc 3' },
+      { id: '4', title: 'title 4', description: 'desc 4' }
     ]
 
+    const activeProductsById = {
+      '2': true,
+      '4': true
+    }
+
     function getComponent() {
-      return <ProductList items={items} />
+      return <ProductList items={items} activeProductsById={activeProductsById} />
     }
 
     it('snapshots', () => {
@@ -62,14 +67,14 @@ describe('ProductList', () => {
 
   it('handles selection event', () => {
     const items = [
-      { id: '1', title: 'title 1', description: 'desc 1', active: false },
-      { id: '2', title: 'title 2', description: 'desc 2', active: false },
-      { id: '3', title: 'title 3', description: 'desc 3', active: false },
-      { id: '4', title: 'title 4', description: 'desc 4', active: false }
+      { id: '1', title: 'title 1', description: 'desc 1' },
+      { id: '2', title: 'title 2', description: 'desc 2' },
+      { id: '3', title: 'title 3', description: 'desc 3' },
+      { id: '4', title: 'title 4', description: 'desc 4' }
     ]
 
     let selected
-    const root = shallow(<ProductList items={items} onSelect={x => (selected = x)} />)
+    const root = shallow(<ProductList items={items} activeProductsById={{}} onSelect={x => (selected = x)} />)
 
     root
       .find('ProductItem')

@@ -4,7 +4,7 @@ import mockStore from 'redux-mock-store'
 import { shallow } from 'enzyme'
 import BoundAppBody from './BoundAppBody'
 
-describe('BoundCategoryProductList', () => {
+describe('BoundProductList', () => {
   let root
   let store
 

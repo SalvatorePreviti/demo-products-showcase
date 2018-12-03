@@ -5,7 +5,7 @@ import LoadError from '../../atoms/LoadError/LoadError'
 import Loading from '../../atoms/Loading/Loading'
 import BoundProductCategories from '../BoundProductCategories/BoundProductCategories'
 import BoundProductFilter from '../BoundProductFilter/BoundProductFilter'
-import BoundCategoryProductList from '../BoundCategoryProductList/BoundCategoryProductList'
+import BoundProductList from '../BoundProductList/BoundProductList'
 
 function AppBody(props) {
   const { loading, loadFailed } = props
@@ -21,7 +21,7 @@ function AppBody(props) {
     <div>
       <BoundProductCategories />
       <BoundProductFilter />
-      <BoundCategoryProductList />
+      <BoundProductList />
     </div>
   )
 }

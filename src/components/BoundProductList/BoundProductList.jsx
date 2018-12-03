@@ -1,18 +1,19 @@
 import { connect } from 'react-redux'
 import ProductList from '../../atoms/ProductList/ProductList'
-import actionSelectProduct from '../../domain/actions/actionSelectProduct'
+import actionToggleProduct from '../../domain/actions/actionToggleProduct'
 
 function mapStateToProps(state) {
-  const { filteredProducts } = state
+  const { filteredProducts, activeProductsById } = state
   return {
-    items: filteredProducts
+    items: filteredProducts,
+    activeProductsById: activeProductsById
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     onSelect(product) {
-      dispatch(actionSelectProduct(product))
+      dispatch(actionToggleProduct(product))
     }
   }
 }

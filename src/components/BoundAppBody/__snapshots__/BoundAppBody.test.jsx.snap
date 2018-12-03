@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BoundCategoryProductList snapshots 1`] = `
+exports[`BoundProductList snapshots 1`] = `
 <AppBody
   dispatch={[Function]}
   loadFailed={false}
