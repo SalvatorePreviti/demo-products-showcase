@@ -37,7 +37,7 @@ function getConfig(env, config) {
           use: [{ loader: 'html-loader' }]
         },
         {
-          test: /components(.*)\.scss$/,
+          test: /(components|atoms)(.*)\.scss$/,
           use: [MiniCssExtractPlugin.loader, cssModuleLoader, postCSSLoader, 'sass-loader']
         }
       ]
