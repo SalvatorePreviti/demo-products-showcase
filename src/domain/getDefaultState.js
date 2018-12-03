@@ -1,5 +1,8 @@
 function getDefaultState() {
-  return {}
+  return {
+    categories: [],
+    activeCategory: null
+  }
 }
 
 export default getDefaultState
