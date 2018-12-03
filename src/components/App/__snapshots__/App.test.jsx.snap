@@ -12,6 +12,9 @@ exports[`App snapshots 1`] = `
     }
   }
 >
-  <div />
+  <div>
+    <Connect(ProductCategories) />
+    <Connect(ProductFilter) />
+  </div>
 </Provider>
 `;

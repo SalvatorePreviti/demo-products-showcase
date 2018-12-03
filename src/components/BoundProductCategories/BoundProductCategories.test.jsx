@@ -20,6 +20,10 @@ describe('BoundProductCategories', () => {
     root = shallow(<BoundProductCategories store={store} />)
   })
 
+  it('snapshots', () => {
+    expect(root).toMatchSnapshot()
+  })
+
   it('passes props', () => {
     expect(root.props()).toMatchObject({
       categories,
@@ -27,7 +31,7 @@ describe('BoundProductCategories', () => {
     })
   })
 
-  it('passes onSelectCategory', () => {
+  it('passes callbacks', () => {
     root.simulate('selectCategory', categories[2])
     expect(store.getActions()).toEqual([actionSelectCategory(categories[2])])
   })

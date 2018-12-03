@@ -1,7 +1,8 @@
 function getDefaultState() {
   return {
     categories: [],
-    activeCategory: null
+    activeCategory: null,
+    productFilter: ''
   }
 }
 
