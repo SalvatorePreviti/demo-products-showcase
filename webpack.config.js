@@ -3,6 +3,7 @@ const DynamicCdnWebpackPlugin = require('dynamic-cdn-webpack-plugin')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 function getConfig(env, config) {
   const isProduction = config && config.mode === 'production'
@@ -27,7 +28,7 @@ function getConfig(env, config) {
 
   const devServerPort = 8080
 
-  return {
+  const result = {
     entry: './src/index.jsx',
     module: {
       rules: [
@@ -41,7 +42,7 @@ function getConfig(env, config) {
           use: [{ loader: 'html-loader' }]
         },
         {
-          test: /(components|atoms)(.*)\.scss$/,
+          test: /(atoms|components)(.*)\.scss$/,
           use: [MiniCssExtractPlugin.loader, cssModuleLoader, postCSSLoader, 'sass-loader']
         }
       ]
@@ -64,12 +65,18 @@ function getConfig(env, config) {
     plugins: [
       new HtmlWebPackPlugin({
         template: './src/index.html',
-        filename: './index.html'
+        filename: './index.html',
+        hash: isProduction,
+        minify: {
+          collapseWhitespace: isProduction,
+          html5: true,
+          removeComments: isProduction,
+          removeEmptyAttributes: true,
+          minifyCSS: isProduction
+        }
       }),
       new DynamicCdnWebpackPlugin(),
       new MiniCssExtractPlugin({
-        // Options similar to the same options in webpackOptions.output
-        // both options are optional
         filename: '[name].css',
         chunkFilename: '[id].css'
       }),
@@ -82,5 +89,19 @@ function getConfig(env, config) {
       })
     ]
   }
+
+  if (isProduction) {
+    result.plugins.push(
+      new OptimizeCssAssetsPlugin({
+        cssProcessor: require('cssnano'),
+        cssProcessorPluginOptions: {
+          preset: ['default', { discardComments: { removeAll: true } }]
+        },
+        canPrint: true
+      })
+    )
+  }
+
+  return result
 }
 module.exports = getConfig
