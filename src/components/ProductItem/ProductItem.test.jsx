@@ -60,13 +60,12 @@ describe('ProductItem', () => {
 
   describe('when clicking', () => {
     it('invokes onSelect with the item id', () => {
-      let clickedValue
+      let selected
       const root = shallow(
         <ProductItem
-          itemId="123"
           title="Item"
-          onSelect={value => {
-            clickedValue = value
+          onSelect={() => {
+            selected = true
           }}
         />
       )
@@ -76,7 +75,7 @@ describe('ProductItem', () => {
         .at(0)
         .simulate('click')
 
-      expect(clickedValue).toBe('123')
+      expect(selected).toBe(true)
     })
   })
 })

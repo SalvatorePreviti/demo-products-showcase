@@ -6,14 +6,14 @@ const headerStyle = styles.header
 const headerActiveStyle = styles.header + ' ' + styles.active
 
 function ProductItem(props) {
-  const { itemId, title, active, description } = props
+  const { title, active, description } = props
   return (
     <div>
       <a
         href="#"
         className={active ? headerActiveStyle : headerStyle}
         onClick={() => {
-          props.onSelect && props.onSelect(itemId)
+          props.onSelect && props.onSelect()
         }}>
         {title}
       </a>
@@ -23,7 +23,6 @@ function ProductItem(props) {
 }
 
 ProductItem.propTypes = {
-  itemId: PropTypes.string,
   title: PropTypes.string.isRequired,
   active: PropTypes.bool,
   description: PropTypes.string,

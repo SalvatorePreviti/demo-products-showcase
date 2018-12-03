@@ -24,10 +24,10 @@ describe('ProductList', () => {
       const root = shallow(getComponent())
       const found = root.find('ProductItem')
       expect(found.map(x => x.props())).toMatchObject([
-        { active: false, description: 'desc 1', itemId: '1', title: 'title 1' },
-        { active: false, description: 'desc 2', itemId: '2', title: 'title 2' },
-        { active: false, description: 'desc 3', itemId: '3', title: 'title 3' },
-        { active: false, description: 'desc 4', itemId: '4', title: 'title 4' }
+        { active: false, description: 'desc 1', title: 'title 1' },
+        { active: false, description: 'desc 2', title: 'title 2' },
+        { active: false, description: 'desc 3', title: 'title 3' },
+        { active: false, description: 'desc 4', title: 'title 4' }
       ])
     })
   })
@@ -52,10 +52,10 @@ describe('ProductList', () => {
       const root = shallow(getComponent())
       const found = root.find('ProductItem')
       expect(found.map(x => x.props())).toMatchObject([
-        { active: false, description: 'desc 1', itemId: '1', title: 'title 1' },
-        { active: true, description: 'desc 2', itemId: '2', title: 'title 2' },
-        { active: false, description: 'desc 3', itemId: '3', title: 'title 3' },
-        { active: true, description: 'desc 4', itemId: '4', title: 'title 4' }
+        { active: false, description: 'desc 1', title: 'title 1' },
+        { active: true, description: 'desc 2', title: 'title 2' },
+        { active: false, description: 'desc 3', title: 'title 3' },
+        { active: true, description: 'desc 4', title: 'title 4' }
       ])
     })
   })
@@ -75,8 +75,8 @@ describe('ProductList', () => {
       .find('ProductItem')
       .at(2)
       .props()
-      .onSelect('3')
+      .onSelect(items[2])
 
-    expect(selected).toBe('3')
+    expect(selected).toBe(items[2])
   })
 })
