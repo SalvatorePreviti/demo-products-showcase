@@ -1,9 +1,11 @@
 import getDefaultState from '../getDefaultState'
 import * as actionTypes from '../actionTypes'
 import reducerSelectCategory from './reducerSelectCategory'
+import reducerSetProductFilter from './reducerSetProductFilter'
 
 const reducersMap = {
-  [actionTypes.SELECT_CATEGORY]: reducerSelectCategory
+  [actionTypes.SELECT_CATEGORY]: reducerSelectCategory,
+  [actionTypes.SET_PRODUCT_FILTER]: reducerSetProductFilter
 }
 
 const reducersLookup = Object.assign(Object.create(null), reducersMap)
