@@ -28,6 +28,8 @@ function getConfig(env, config) {
 
   const devServerPort = 8080
 
+  const apiUrl = 'https://api.gousto.co.uk'
+
   const result = {
     entry: './src/index.jsx',
     module: {
@@ -57,7 +59,7 @@ function getConfig(env, config) {
         '/products': {
           logLevel: 'debug',
           changeOrigin: true,
-          target: 'https://api.gousto.co.uk',
+          target: apiUrl,
           secure: false
         }
       }
@@ -82,9 +84,7 @@ function getConfig(env, config) {
       }),
       new webpack.DefinePlugin({
         'process.env': {
-          PRODUCTS_API_URL: JSON.stringify(
-            process.env.PRODUCTS_API_URL || (isDevServer ? `http://localhost:${devServerPort}` : 'https://api.gousto.co.uk')
-          )
+          PRODUCTS_API_URL: JSON.stringify(process.env.PRODUCTS_API_URL || (isDevServer ? `http://localhost:${devServerPort}` : apiUrl))
         }
       })
     ]
