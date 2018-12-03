@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './ProductItem.scss'
 
 const headerStyle = styles.header
-const headerActiveStyle = styles.header + ' ' + styles.active
+const headerActiveStyle = `${styles.header} ${styles.active}`
 
 function ProductItem(props) {
   const { title, active, description } = props

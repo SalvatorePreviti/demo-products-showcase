@@ -7,7 +7,7 @@ export default function getFilteredProducts(products, filter) {
     return []
   }
 
-  if (!filter) {
+  if (!filter || typeof filter !== 'string') {
     return products
   }
 

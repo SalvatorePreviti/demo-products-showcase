@@ -26,6 +26,8 @@ describe('reducersLoad', () => {
     const nextState = reducers(state, actionLoadOk(categories))
     expect(nextState).toMatchObject({
       ...state,
+      loading: false,
+      loadFailed: false,
       categories: categories,
       activeCategory: categories[0],
       filteredProducts: [{ id: 'p1', title: 'p1' }, { id: 'p2', title: 'p2' }]

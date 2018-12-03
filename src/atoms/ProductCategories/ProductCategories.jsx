@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styles from './ProductCategories.scss'
 
 const itemStyle = styles.item
-const itemActiveStyle = styles.item + ' ' + styles.active
+const itemActiveStyle = `${styles.item} ${styles.active}`
 
 function ProductCategories(props) {
   const { categories, activeCategory, onSelectCategory } = props

@@ -2,21 +2,28 @@ import getDefaultState from '../getDefaultState'
 import getFilteredProducts from '../lib/getFilteredProducts'
 
 export function reducerLoadStarted(state = getDefaultState()) {
-  state.loading = true
-  state.loadFailed = false
-  return state
+  return {
+    ...state,
+    loading: true,
+    loadFailed: false
+  }
 }
 
 export function reducerLoadFail(state = getDefaultState()) {
-  state.loading = false
-  state.loadFailed = true
-  return state
+  return {
+    ...state,
+    loading: false,
+    loadFailed: true
+  }
 }
 
 export function reducerLoadOk(state = getDefaultState(), action) {
-  state.loading = false
-  state.categories = action.categories
-  state.activeCategory = state.categories[0]
-  state.filteredProducts = getFilteredProducts(state.activeCategory && state.activeCategory.products, state.productFilter)
-  return state
+  const activeCategory = action.categories[0]
+  return {
+    ...state,
+    loading: false,
+    categories: action.categories,
+    activeCategory: activeCategory,
+    filteredProducts: getFilteredProducts(activeCategory && activeCategory.products, state.productFilter)
+  }
 }

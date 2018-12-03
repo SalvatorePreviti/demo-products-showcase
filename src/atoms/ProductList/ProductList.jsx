@@ -15,7 +15,7 @@ function ProductList(props) {
             title={item.title}
             active={item.active}
             description={item.description}
-            onSelect={onSelect}
+            onSelect={() => onSelect && onSelect(item)}
           />
         )
       })}

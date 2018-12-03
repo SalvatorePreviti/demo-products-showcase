@@ -5,7 +5,7 @@ function ProductFilter(props) {
   const { value, onChange } = props
   return (
     <div>
-      <input type="text" value={value} onChange={onChange} />
+      <input type="text" value={value} onChange={event => onChange && onChange(event.target.value)} />
     </div>
   )
 }

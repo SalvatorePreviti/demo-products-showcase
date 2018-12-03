@@ -18,10 +18,9 @@ const reducersLookup = Object.assign(Object.create(null), reducersMap)
 
 function reducers(state = getDefaultState(), action) {
   const reducer = reducersLookup[action.type]
-  if (!reducer) {
-    return state
+  if (reducer) {
+    return reducer(state, action)
   }
-  state = reducer(state, action)
   return state
 }
 

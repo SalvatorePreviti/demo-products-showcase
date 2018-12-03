@@ -1,5 +1,5 @@
 import { SELECT_PRODUCT } from '../actionTypes'
 
-export default function selectProduct(product) {
+export default function actionSelectProduct(product) {
   return { type: SELECT_PRODUCT, product }
 }

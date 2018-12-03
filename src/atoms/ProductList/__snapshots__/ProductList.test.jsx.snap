@@ -7,6 +7,7 @@ exports[`ProductList with a list of items, with some selections snapshots 1`] = 
     description="desc 1"
     itemId="1"
     key="1"
+    onSelect={[Function]}
     title="title 1"
   />
   <ProductItem
@@ -14,6 +15,7 @@ exports[`ProductList with a list of items, with some selections snapshots 1`] = 
     description="desc 2"
     itemId="2"
     key="2"
+    onSelect={[Function]}
     title="title 2"
   />
   <ProductItem
@@ -21,6 +23,7 @@ exports[`ProductList with a list of items, with some selections snapshots 1`] = 
     description="desc 3"
     itemId="3"
     key="3"
+    onSelect={[Function]}
     title="title 3"
   />
   <ProductItem
@@ -28,6 +31,7 @@ exports[`ProductList with a list of items, with some selections snapshots 1`] = 
     description="desc 4"
     itemId="4"
     key="4"
+    onSelect={[Function]}
     title="title 4"
   />
 </div>
@@ -40,6 +44,7 @@ exports[`ProductList with a list of items, without selection snapshots 1`] = `
     description="desc 1"
     itemId="1"
     key="1"
+    onSelect={[Function]}
     title="title 1"
   />
   <ProductItem
@@ -47,6 +52,7 @@ exports[`ProductList with a list of items, without selection snapshots 1`] = `
     description="desc 2"
     itemId="2"
     key="2"
+    onSelect={[Function]}
     title="title 2"
   />
   <ProductItem
@@ -54,6 +60,7 @@ exports[`ProductList with a list of items, without selection snapshots 1`] = `
     description="desc 3"
     itemId="3"
     key="3"
+    onSelect={[Function]}
     title="title 3"
   />
   <ProductItem
@@ -61,6 +68,7 @@ exports[`ProductList with a list of items, without selection snapshots 1`] = `
     description="desc 4"
     itemId="4"
     key="4"
+    onSelect={[Function]}
     title="title 4"
   />
 </div>

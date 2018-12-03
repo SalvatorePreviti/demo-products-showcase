@@ -7,14 +7,14 @@ export function actionLoad() {
     dispatch(actionLoadStarted())
     return Promise.all([fetchCategories(), fetchProducts()])
       .then(([fetchedCategories, fetchedProducts]) => {
-        const built = buildProductsShowcase(fetchedCategories, fetchedProducts)
-        actionLoadOk(built)
+        const categories = buildProductsShowcase(fetchedCategories, fetchedProducts)
+        dispatch(actionLoadOk(categories))
       })
       .catch(error => {
         // this should go to a common logging and error handling library that is outside the scope of this project.
         // eslint-disable-next-line no-console
-        console.log('Failed loading categories and products', error)
-        actionLoadFail()
+        console.error('Failed to load categories and products', error)
+        dispatch(actionLoadFail())
       })
   }
 }
