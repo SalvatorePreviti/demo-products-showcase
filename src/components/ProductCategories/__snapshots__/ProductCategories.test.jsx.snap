@@ -6,6 +6,7 @@ exports[`ProductCategories with a list of categories, with a selection snapshots
   <a
     className="item"
     href="#"
+    key="1"
     onClick={[Function]}
   >
     title 1
@@ -13,6 +14,7 @@ exports[`ProductCategories with a list of categories, with a selection snapshots
   <a
     className="item active"
     href="#"
+    key="2"
     onClick={[Function]}
   >
     title 2
@@ -20,6 +22,7 @@ exports[`ProductCategories with a list of categories, with a selection snapshots
   <a
     className="item"
     href="#"
+    key="3"
     onClick={[Function]}
   >
     title 3
@@ -27,6 +30,7 @@ exports[`ProductCategories with a list of categories, with a selection snapshots
   <a
     className="item"
     href="#"
+    key="4"
     onClick={[Function]}
   >
     title 4
@@ -40,6 +44,7 @@ exports[`ProductCategories with a list of categories, without selection snapshot
   <a
     className="item"
     href="#"
+    key="1"
     onClick={[Function]}
   >
     title 1
@@ -47,6 +52,7 @@ exports[`ProductCategories with a list of categories, without selection snapshot
   <a
     className="item"
     href="#"
+    key="2"
     onClick={[Function]}
   >
     title 2
@@ -54,6 +60,7 @@ exports[`ProductCategories with a list of categories, without selection snapshot
   <a
     className="item"
     href="#"
+    key="3"
     onClick={[Function]}
   >
     title 3
@@ -61,6 +68,7 @@ exports[`ProductCategories with a list of categories, without selection snapshot
   <a
     className="item"
     href="#"
+    key="4"
     onClick={[Function]}
   >
     title 4

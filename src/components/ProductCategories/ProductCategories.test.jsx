@@ -1,6 +1,5 @@
 import React from 'react'
-import Renderer from 'react-test-renderer'
-import ShallowRenderer from 'react-test-renderer/shallow'
+import { shallow } from 'enzyme'
 
 import ProductCategories from './ProductCategories'
 
@@ -18,16 +17,13 @@ describe('ProductCategories', () => {
     }
 
     it('snapshots', () => {
-      const shallowRenderer = new ShallowRenderer()
-      shallowRenderer.render(getComponent())
-      expect(shallowRenderer.getRenderOutput()).toMatchSnapshot()
+      expect(shallow(getComponent())).toMatchSnapshot()
     })
 
     it('renders all elements', () => {
-      const root = Renderer.create(getComponent()).root
-      const found = root.findAll(item => item.type === 'a', { deep: true })
-
-      expect(found.map(item => item.props)).toMatchObject([
+      const root = shallow(getComponent())
+      const found = root.find('a')
+      expect(found.map(item => item.props())).toMatchObject([
         { href: '#', className: 'item', children: 'title 1' },
         { href: '#', className: 'item', children: 'title 2' },
         { href: '#', className: 'item', children: 'title 3' },
@@ -42,16 +38,13 @@ describe('ProductCategories', () => {
     }
 
     it('snapshots', () => {
-      const shallowRenderer = new ShallowRenderer()
-      shallowRenderer.render(getComponent())
-      expect(shallowRenderer.getRenderOutput()).toMatchSnapshot()
+      expect(shallow(getComponent())).toMatchSnapshot()
     })
 
     it('renders all elements, marking as active the active element', () => {
-      const root = Renderer.create(getComponent()).root
-      const found = root.findAll(item => item.type === 'a', { deep: true })
-
-      expect(found.map(item => item.props)).toMatchObject([
+      const root = shallow(getComponent())
+      const found = root.find('a')
+      expect(found.map(item => item.props())).toMatchObject([
         { href: '#', className: 'item', children: 'title 1' },
         { href: '#', className: 'item active', children: 'title 2' },
         { href: '#', className: 'item', children: 'title 3' },
@@ -63,16 +56,19 @@ describe('ProductCategories', () => {
   describe('when clicking', () => {
     it('invokes onSelectCategory with the category id', () => {
       let clickedValue
-      const root = Renderer.create(
+      const root = shallow(
         <ProductCategories
           categories={categories}
           onSelectCategory={value => {
             clickedValue = value
           }}
         />
-      ).root
+      )
 
-      root.find(x => x.props.children === 'title 3').props.onClick()
+      root
+        .find('a')
+        .at(2)
+        .simulate('click')
 
       expect(clickedValue).toBe('3')
     })
