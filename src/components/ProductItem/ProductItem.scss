@@ -1,0 +1,19 @@
+.header {
+  display: block;
+  text-decoration: none;
+
+  &,
+  &:visited,
+  &:active,
+  &:focus {
+    color: #000;
+  }
+
+  &.active {
+    font-weight: bold;
+  }
+}
+
+.content {
+  padding-bottom: 15px;
+}

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem active snapshots 1`] = `
+<div>
+  <a
+    className="header active"
+    href="#"
+    onClick={[Function]}
+  >
+    Active item title
+  </a>
+  <div
+    className="content"
+  >
+    Item content
+  </div>
+</div>
+`;
+
+exports[`ProductItem not active snapshots 1`] = `
+<div>
+  <a
+    className="header"
+    href="#"
+    onClick={[Function]}
+  >
+    Item title
+  </a>
+</div>
+`;
