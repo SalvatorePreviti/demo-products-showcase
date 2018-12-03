@@ -6,18 +6,17 @@ const itemStyle = styles.item
 const itemActiveStyle = styles.item + ' ' + styles.active
 
 function ProductCategories(props) {
-  const { categories, activeCategoryId, onSelectCategory } = props
+  const { categories, activeCategory, onSelectCategory } = props
   return (
     <header>
       Store Cupboard
       {categories.map(category => {
-        const categoryId = category.id
         return (
           <a
-            key={categoryId}
+            key={category.id}
             href="#"
-            className={categoryId === activeCategoryId ? itemActiveStyle : itemStyle}
-            onClick={() => onSelectCategory && onSelectCategory(categoryId)}>
+            className={category === activeCategory ? itemActiveStyle : itemStyle}
+            onClick={() => onSelectCategory && onSelectCategory(category)}>
             {category.title}
           </a>
         )
@@ -26,14 +25,14 @@ function ProductCategories(props) {
   )
 }
 
+const categoryType = PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired
+})
+
 ProductCategories.propTypes = {
-  categories: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired
-    })
-  ).isRequired,
-  activeCategoryId: PropTypes.string,
+  categories: PropTypes.arrayOf(categoryType.isRequired).isRequired,
+  activeCategory: categoryType,
   onSelectCategory: PropTypes.func
 }
 

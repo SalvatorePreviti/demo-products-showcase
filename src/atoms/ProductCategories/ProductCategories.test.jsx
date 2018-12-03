@@ -34,7 +34,7 @@ describe('ProductCategories', () => {
 
   describe('with a list of categories, with a selection', () => {
     function getComponent() {
-      return <ProductCategories categories={categories} activeCategoryId="2" />
+      return <ProductCategories categories={categories} activeCategory={categories[1]} />
     }
 
     it('snapshots', () => {
@@ -70,7 +70,7 @@ describe('ProductCategories', () => {
         .at(2)
         .simulate('click')
 
-      expect(clickedValue).toBe('3')
+      expect(clickedValue).toBe(categories[2])
     })
   })
 })
