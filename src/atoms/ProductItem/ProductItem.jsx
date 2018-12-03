@@ -12,8 +12,11 @@ function ProductItem(props) {
       <a
         href="#"
         className={active ? headerActiveStyle : headerStyle}
-        onClick={() => {
-          props.onSelect && props.onSelect()
+        onClick={event => {
+          if (props.onSelect) {
+            props.onSelect()
+          }
+          event.preventDefault()
         }}>
         {title}
       </a>

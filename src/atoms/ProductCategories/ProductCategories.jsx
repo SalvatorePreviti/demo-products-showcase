@@ -16,7 +16,12 @@ function ProductCategories(props) {
             key={category.id}
             href="#"
             className={category === activeCategory ? itemActiveStyle : itemStyle}
-            onClick={() => onSelectCategory && onSelectCategory(category)}>
+            onClick={event => {
+              if (onSelectCategory) {
+                onSelectCategory(category)
+              }
+              event.preventDefault()
+            }}>
             {category.title}
           </a>
         )
