@@ -19,6 +19,7 @@
     }
   },
   "rules": {
+    "react-redux/mapDispatchToProps-returns-object": "off",
     "node/no-unpublished-require": "off"
   },
   "overrides": [
