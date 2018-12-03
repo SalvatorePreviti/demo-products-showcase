@@ -6,7 +6,7 @@ const itemStyle = styles.item
 const itemActiveStyle = styles.item + ' ' + styles.active
 
 function ProductCategories(props) {
-  const { categories, activeCategoryId } = props
+  const { categories, activeCategoryId, onSelectCategory } = props
   return (
     <header>
       Store Cupboard
@@ -17,7 +17,7 @@ function ProductCategories(props) {
             key={categoryId}
             href="#"
             className={categoryId === activeCategoryId ? itemActiveStyle : itemStyle}
-            onClick={() => props.onSelectCategory(categoryId)}>
+            onClick={() => onSelectCategory && onSelectCategory(categoryId)}>
             {category.title}
           </a>
         )
@@ -34,9 +34,7 @@ ProductCategories.propTypes = {
     })
   ).isRequired,
   activeCategoryId: PropTypes.string,
-  onSelectCategory: PropTypes.func.isRequired
+  onSelectCategory: PropTypes.func
 }
-
-ProductCategories.prop
 
 export default ProductCategories

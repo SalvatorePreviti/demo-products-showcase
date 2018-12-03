@@ -14,7 +14,7 @@ describe('ProductCategories', () => {
 
   describe('with a list of categories, without selection', () => {
     function getComponent() {
-      return <ProductCategories categories={categories} onSelectCategory={() => {}} />
+      return <ProductCategories categories={categories} />
     }
 
     it('snapshots', () => {
@@ -38,7 +38,7 @@ describe('ProductCategories', () => {
 
   describe('with a list of categories, with a selection', () => {
     function getComponent() {
-      return <ProductCategories categories={categories} activeCategoryId="2" onSelectCategory={() => {}} />
+      return <ProductCategories categories={categories} activeCategoryId="2" />
     }
 
     it('snapshots', () => {
