@@ -15,6 +15,7 @@ exports[`App snapshots 1`] = `
   <div>
     <Connect(ProductCategories) />
     <Connect(ProductFilter) />
+    <Connect(ProductList) />
   </div>
 </Provider>
 `;
