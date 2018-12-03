@@ -4,7 +4,6 @@ import styles from './ProductItem.scss'
 
 const headerStyle = styles.header
 const headerActiveStyle = styles.header + ' ' + styles.active
-const contentStyle = styles.content
 
 function ProductItem(props) {
   const { itemId, title, active, description } = props
@@ -18,7 +17,7 @@ function ProductItem(props) {
         }}>
         {title}
       </a>
-      {active ? <div className={contentStyle}>{description}</div> : null}
+      {active ? <div className={styles.description}>{description}</div> : null}
     </div>
   )
 }

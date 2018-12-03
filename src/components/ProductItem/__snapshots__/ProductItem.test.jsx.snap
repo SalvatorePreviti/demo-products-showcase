@@ -10,9 +10,9 @@ exports[`ProductItem active snapshots 1`] = `
     Active item title
   </a>
   <div
-    className="content"
+    className="description"
   >
-    Item content
+    Item description
   </div>
 </div>
 `;
