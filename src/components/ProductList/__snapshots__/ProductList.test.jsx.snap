@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList with a list of items, with some selections snapshots 1`] = `
+<div>
+  <ProductItem
+    active={false}
+    description="desc 1"
+    itemId="1"
+    key="1"
+    title="title 1"
+  />
+  <ProductItem
+    active={true}
+    description="desc 2"
+    itemId="2"
+    key="2"
+    title="title 2"
+  />
+  <ProductItem
+    active={false}
+    description="desc 3"
+    itemId="3"
+    key="3"
+    title="title 3"
+  />
+  <ProductItem
+    active={true}
+    description="desc 4"
+    itemId="4"
+    key="4"
+    title="title 4"
+  />
+</div>
+`;
+
+exports[`ProductList with a list of items, without selection snapshots 1`] = `
+<div>
+  <ProductItem
+    active={false}
+    description="desc 1"
+    itemId="1"
+    key="1"
+    title="title 1"
+  />
+  <ProductItem
+    active={false}
+    description="desc 2"
+    itemId="2"
+    key="2"
+    title="title 2"
+  />
+  <ProductItem
+    active={false}
+    description="desc 3"
+    itemId="3"
+    key="3"
+    title="title 3"
+  />
+  <ProductItem
+    active={false}
+    description="desc 4"
+    itemId="4"
+    key="4"
+    title="title 4"
+  />
+</div>
+`;
