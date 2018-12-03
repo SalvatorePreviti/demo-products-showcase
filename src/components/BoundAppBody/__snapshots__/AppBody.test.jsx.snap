@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppBody when ready snapshots 1`] = `
+<div>
+  <Connect(ProductCategories) />
+  <Connect(ProductFilter) />
+  <Connect(ProductList) />
+</div>
+`;
+
+exports[`AppBody with load error snapshots 1`] = `<LoadError />`;
+
+exports[`AppBody with loading snapshots 1`] = `<Loading />`;

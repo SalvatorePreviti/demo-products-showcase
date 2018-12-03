@@ -1,15 +1,14 @@
 import React from 'react'
-import { Provider } from 'react-redux'
+import PropTypes from 'prop-types'
 
-import store from '../../domain/store'
+import LoadError from '../../atoms/LoadError/LoadError'
+import Loading from '../../atoms/Loading/Loading'
 import BoundProductCategories from '../BoundProductCategories/BoundProductCategories'
 import BoundProductFilter from '../BoundProductFilter/BoundProductFilter'
 import BoundCategoryProductList from '../BoundCategoryProductList/BoundCategoryProductList'
-import Loading from '../../atoms/Loading/Loading'
-import LoadError from '../../atoms/LoadError/LoadError'
 
-function body() {
-  const { loading, loadFailed } = store.getState()
+function AppBody(props) {
+  const { loading, loadFailed } = props
 
   if (loadFailed) {
     return <LoadError />
@@ -28,8 +27,9 @@ function body() {
   )
 }
 
-function App() {
-  return <Provider store={store}>{body()}</Provider>
+AppBody.propTypes = {
+  loading: PropTypes.bool,
+  loadFailed: PropTypes.bool
 }
 
-export default App
+export default AppBody

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadError snapshots 1`] = `
+<div>
+  <b>
+    Loading error.
+  </b>
+   Try to reload
+</div>
+`;
