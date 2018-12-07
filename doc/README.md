@@ -142,7 +142,7 @@ This allows the application to scale better than a single big file with all acti
 
 # Possible improvements
 
-- A code review from another deeloper, is always good to have the code checked with 4 eyes.
+- A code review from another developer.
 - More refactoring and cleanup, is always good.
 - Continuous Integration with compilation, testing and deploy in a dev environment
 - Acceptance test with puppeteer, selenium or nightwatch
