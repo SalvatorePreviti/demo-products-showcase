@@ -47,7 +47,7 @@ Webpack configuration is in the file _webkack.config.js_
 [Jest](https://jestjs.io/) is used for unit testing.
 Jest, compared to other solutions like Mocha, Ava or Tape, is extremely easy to configure and has almost everything included out of the box. It compiles via babel the referenced modules on the fly. It can be faster than Mocha for large applications by automatically running test suites in parallel on multiple processes. It works very well also with React, JSX and supports [snapshot testing](https://jestjs.io/docs/en/snapshot-testing).
 
-Snapshot testing is extremely useful together with code reviews and pull requests. Since the snapshots are committed together with the code that generates them. is easy to see if any given change in the commit or of the pull request affects some component in unintended ways.
+Snapshot testing is extremely useful together with code reviews and pull requests. Since the snapshots are committed together with the code that generates them, is easy to see if any given change in a commit or a pull request affects some component in unintended ways.
 
 [Enzyme](https://airbnb.io/enzyme/) is used to simulate and render react components in memory (thanks to react virtual DOM). It allows to easily query rendered components features to write test expectations.
 
