@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductCategory with selection snapshots 1`] = `
+<a
+  className="ProductCategory active"
+  href="#"
+  onClick={[Function]}
+>
+  An active item
+</a>
+`;
+
+exports[`ProductCategory without selection snapshots 1`] = `
+<a
+  className="ProductCategory"
+  href="#"
+  onClick={[Function]}
+>
+  A title
+</a>
+`;

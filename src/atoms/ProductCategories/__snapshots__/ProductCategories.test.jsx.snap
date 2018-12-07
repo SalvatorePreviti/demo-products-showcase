@@ -3,75 +3,59 @@
 exports[`ProductCategories with a list of categories, with a selection snapshots 1`] = `
 <header>
   Store Cupboard
-  <a
-    className="item"
-    href="#"
+  <ProductCategory
+    active={false}
     key="1"
-    onClick={[Function]}
-  >
-    title 1
-  </a>
-  <a
-    className="item active"
-    href="#"
+    onSelect={[Function]}
+    title="title 1"
+  />
+  <ProductCategory
+    active={true}
     key="2"
-    onClick={[Function]}
-  >
-    title 2
-  </a>
-  <a
-    className="item"
-    href="#"
+    onSelect={[Function]}
+    title="title 2"
+  />
+  <ProductCategory
+    active={false}
     key="3"
-    onClick={[Function]}
-  >
-    title 3
-  </a>
-  <a
-    className="item"
-    href="#"
+    onSelect={[Function]}
+    title="title 3"
+  />
+  <ProductCategory
+    active={false}
     key="4"
-    onClick={[Function]}
-  >
-    title 4
-  </a>
+    onSelect={[Function]}
+    title="title 4"
+  />
 </header>
 `;
 
 exports[`ProductCategories with a list of categories, without selection snapshots 1`] = `
 <header>
   Store Cupboard
-  <a
-    className="item"
-    href="#"
+  <ProductCategory
+    active={false}
     key="1"
-    onClick={[Function]}
-  >
-    title 1
-  </a>
-  <a
-    className="item"
-    href="#"
+    onSelect={[Function]}
+    title="title 1"
+  />
+  <ProductCategory
+    active={false}
     key="2"
-    onClick={[Function]}
-  >
-    title 2
-  </a>
-  <a
-    className="item"
-    href="#"
+    onSelect={[Function]}
+    title="title 2"
+  />
+  <ProductCategory
+    active={false}
     key="3"
-    onClick={[Function]}
-  >
-    title 3
-  </a>
-  <a
-    className="item"
-    href="#"
+    onSelect={[Function]}
+    title="title 3"
+  />
+  <ProductCategory
+    active={false}
     key="4"
-    onClick={[Function]}
-  >
-    title 4
-  </a>
+    onSelect={[Function]}
+    title="title 4"
+  />
 </header>
 `;

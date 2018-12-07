@@ -6,20 +6,20 @@ const headerStyle = styles.header
 const headerActiveStyle = `${styles.header} ${styles.active}`
 
 function ProductItem(props) {
-  const { title, active, description } = props
+  const { title, active, description, onSelect } = props
+
+  const onClick = event => {
+    if (onSelect) {
+      onSelect()
+    }
+    if (event) {
+      event.preventDefault()
+    }
+  }
+
   return (
     <div>
-      <a
-        href="#"
-        className={active ? headerActiveStyle : headerStyle}
-        onClick={event => {
-          if (props.onSelect) {
-            props.onSelect()
-          }
-          if (event) {
-            event.preventDefault()
-          }
-        }}>
+      <a href="#" onClick={onClick} className={active ? headerActiveStyle : headerStyle}>
         {title}
       </a>
       {active ? <div className={styles.description}>{description}</div> : null}

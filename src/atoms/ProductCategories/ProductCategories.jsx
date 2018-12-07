@@ -1,45 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styles from './ProductCategories.scss'
-
-const itemStyle = styles.item
-const itemActiveStyle = `${styles.item} ${styles.active}`
+import ProductCategory from '../ProductCategory/ProductCategory'
 
 function ProductCategories(props) {
   const { categories, activeCategory, onSelectCategory } = props
+
   return (
     <header>
       Store Cupboard
-      {categories.map(category => {
-        return (
-          <a
-            key={category.id}
-            href="#"
-            className={category === activeCategory ? itemActiveStyle : itemStyle}
-            onClick={event => {
-              if (onSelectCategory) {
-                onSelectCategory(category)
-              }
-              if (event) {
-                event.preventDefault()
-              }
-            }}>
-            {category.title}
-          </a>
-        )
-      })}
+      {categories.map(category => (
+        <ProductCategory
+          key={category.id}
+          title={category.title}
+          active={category === activeCategory}
+          onSelect={() => onSelectCategory && onSelectCategory(category)}
+        />
+      ))}
     </header>
   )
 }
 
-const categoryType = PropTypes.shape({
+const productCategoryType = PropTypes.shape({
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired
 })
 
 ProductCategories.propTypes = {
-  categories: PropTypes.arrayOf(categoryType.isRequired).isRequired,
-  activeCategory: categoryType,
+  categories: PropTypes.arrayOf(productCategoryType.isRequired).isRequired,
+  activeCategory: productCategoryType,
   onSelectCategory: PropTypes.func
 }
 

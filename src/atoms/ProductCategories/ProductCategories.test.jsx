@@ -1,6 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
+import ProductCategory from '../ProductCategory/ProductCategory'
 import ProductCategories from './ProductCategories'
 
 describe('ProductCategories', () => {
@@ -23,12 +24,12 @@ describe('ProductCategories', () => {
     })
 
     it('renders all elements', () => {
-      const found = root.find('a')
+      const found = root.find(ProductCategory)
       expect(found.map(item => item.props())).toMatchObject([
-        { href: '#', className: 'item', children: 'title 1' },
-        { href: '#', className: 'item', children: 'title 2' },
-        { href: '#', className: 'item', children: 'title 3' },
-        { href: '#', className: 'item', children: 'title 4' }
+        { active: false, title: categories[0].title },
+        { active: false, title: categories[1].title },
+        { active: false, title: categories[2].title },
+        { active: false, title: categories[3].title }
       ])
     })
   })
@@ -45,12 +46,12 @@ describe('ProductCategories', () => {
     })
 
     it('renders all elements, marking as active the active element', () => {
-      const found = root.find('a')
+      const found = root.find(ProductCategory)
       expect(found.map(item => item.props())).toMatchObject([
-        { href: '#', className: 'item', children: 'title 1' },
-        { href: '#', className: 'item active', children: 'title 2' },
-        { href: '#', className: 'item', children: 'title 3' },
-        { href: '#', className: 'item', children: 'title 4' }
+        { active: false, title: categories[0].title },
+        { active: true, title: categories[1].title },
+        { active: false, title: categories[2].title },
+        { active: false, title: categories[3].title }
       ])
     })
   })
@@ -68,9 +69,9 @@ describe('ProductCategories', () => {
       )
 
       root
-        .find('a')
+        .find(ProductCategory)
         .at(2)
-        .simulate('click')
+        .simulate('select', categories[2])
 
       expect(clickedValue).toBe(categories[2])
     })
