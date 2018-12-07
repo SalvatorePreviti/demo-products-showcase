@@ -86,7 +86,7 @@ I decided to write all components and atoms as pure functional react components,
   - _index.jsx_ renders App and starts the request to APIs to obtain the list of products and categories.
 
 Since all components are stateless and the global redux state is immutable, [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) can be used to mark functional components as pure.
-It will implement a fast componentDidChange strategy that just shallow checks props, improving overall application performance.
+It will implement a fast shouldComponentUpdate() strategy that just shallow checks props, improving overall application performance.
 
 ## Domain (application logic and redux store)
 
