@@ -1,3 +1,4 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import ProductList from '../../atoms/ProductList/ProductList'
 import actionToggleProduct from '../../domain/actions/actionToggleProduct'
@@ -21,4 +22,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductList)
+)(React.memo(ProductList))

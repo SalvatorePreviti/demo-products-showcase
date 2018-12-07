@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BoundProductCategories snapshots 1`] = `
-<ProductCategories
+<React.Memo
   categories={
     Array [
       Object {

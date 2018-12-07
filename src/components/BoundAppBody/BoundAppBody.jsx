@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import AppBody from './AppBody'
+import React from 'react'
 
 function mapStateToProps(state) {
   const { loading, loadFailed } = state
@@ -9,4 +10,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(AppBody)
+export default connect(mapStateToProps)(React.memo(AppBody))

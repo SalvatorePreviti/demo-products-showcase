@@ -12,6 +12,6 @@ exports[`App snapshots 1`] = `
     }
   }
 >
-  <Connect(AppBody) />
+  <Connect(Component) />
 </Provider>
 `;

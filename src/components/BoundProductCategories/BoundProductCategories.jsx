@@ -1,3 +1,4 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import ProductCategories from '../../atoms/ProductCategories/ProductCategories'
 import actionSelectCategory from '../../domain/actions/actionSelectCategory'
@@ -18,4 +19,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductCategories)
+)(React.memo(ProductCategories))

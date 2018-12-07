@@ -1,3 +1,4 @@
+import React from 'react'
 import { connect } from 'react-redux'
 import ProductFilter from '../../atoms/ProductFilter/ProductFilter'
 import actionSetProductFilter from '../../domain/actions/actionSetProductFilter'
@@ -18,4 +19,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProductFilter)
+)(React.memo(ProductFilter))

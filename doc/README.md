@@ -85,6 +85,9 @@ I decided to write all components and atoms as pure functional react components,
   - _App_ connects the redux store with BoundAppBody via a react-redux Provider.
   - _index.jsx_ renders App and starts the request to APIs to obtain the list of products and categories.
 
+Since all components are stateless and the global redux state is immutable, [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) can be used to mark functional components as pure.
+It will implement a fast componentDidChange strategy that just shallow checks props, improving overall application performance.
+
 ## Domain (application logic and redux store)
 
 There are several libraries, frameworks or patterns that can be used to maintain the state in a react application. [Flux](https://facebook.github.io/flux/docs/overview.html) and [Redux](https://redux.js.org/introduction), [ModX](https://mobx.js.org/) are some notable examples.

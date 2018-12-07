@@ -2,9 +2,9 @@
 
 exports[`AppBody when ready snapshots 1`] = `
 <div>
-  <Connect(ProductCategories) />
-  <Connect(ProductFilter) />
-  <Connect(ProductList) />
+  <Connect(Component) />
+  <Connect(Component) />
+  <Connect(Component) />
 </div>
 `;
 
