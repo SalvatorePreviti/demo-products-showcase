@@ -20,7 +20,7 @@ Prettier, an highly opinionated code formatter, integrates well with all major I
 JSX is not supported natively by any browser, it needs to be transpiled to plain JavaScript.
 [BabelJS](https://babeljs.io/) is used to transpile from JSX+ES6 to ES5.
 
-The plugin [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) is used to automatically select babel options and plugins to compile to the list of browsers specified in the _"browserslist"_ field in `package.json`
+The plugin [@babel/preset-env](https://babeljs.io/docs/en/babel-preset-env) is used to automatically select babel options and plugins to compile to the list of browsers specified `.browserslistrc`
 
 ES6 is cleaner, more expressive, less bug prone and less verbose than older version of JavaScript. Is a good practice to write new applications targeting the most recent versions of JavaScript and to transpile for backward compatibility to support older browsers until they don't get slowly retired.
 
